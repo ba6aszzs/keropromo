@@ -2,43 +2,21 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-gradient-to-br from-[#00A859] to-[#00C96D]">
-      {/* Padrão de preços/tags */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `radial-gradient(circle at 20% 50%, #fff 1px, transparent 1px), radial-gradient(circle at 80% 50%, #fff 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
-      
-      {/* Etiquetas decorativas */}
-      {["-50%", "OFF", "3x10", "GRÁTIS"].map((t, i) => (
-        <motion.div
-          key={i}
-          animate={{ rotate: [-5, 5, -5], y: [0, -8, 0] }}
-          transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.5 }}
-          className="absolute font-display font-black text-[#FFD700] opacity-[0.06] text-4xl sm:text-6xl"
-          style={{ left: `${10 + i * 25}%`, top: `${20 + i * 15}%` }}
-        >{t}</motion.div>
-      ))}
-
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="max-w-2xl">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
-            <span className="inline-block bg-[#FFD700] text-[#0d0e0d] px-3 py-1 text-[10px] font-bold tracking-[0.15em] uppercase mb-6">Ofertas que vendem</span>
-          </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="font-display text-[clamp(3rem,12vw,6rem)] font-black leading-[0.85] tracking-[-0.03em] uppercase text-white"
-          >
-            KERO
-            <br />
-            <span className="text-[#FFD700]">PROMO</span>
-          </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-5 max-w-md text-sm leading-relaxed sm:text-base text-white/70">
-            O menor preço da região com a qualidade que você merece. Supermercado completo pra sua família.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a href="#produtos" className="flex min-h-12 items-center justify-center bg-[#FFD700] px-8 text-xs font-bold tracking-[0.12em] uppercase text-[#0d0e0d] transition-all hover:bg-[#FFED4A] sm:min-h-0 sm:py-3.5">VER OFERTAS</a>
-            <a href="https://wa.me/5547XXXXXXXX" className="flex min-h-12 items-center justify-center bg-white/10 backdrop-blur-sm px-8 text-xs font-bold tracking-[0.12em] uppercase text-white transition-all sm:min-h-0 sm:py-3.5">FALE CONOSCO</a>
-          </motion.div>
-        </div>
+    <section id="ofertas" className="relative h-[300px] sm:h-[400px] overflow-hidden" style={{ backgroundColor: "#1D5BC4" }}>
+      <div className="absolute inset-0 opacity-20" style={{ background: "linear-gradient(135deg, #FF9100 0%, #1D5BC4 50%, #FF9100 100%)" }} />
+      <div className="absolute inset-0" style={{ backgroundImage: `radial-gradient(circle at 30% 50%, rgba(255,145,0,0.15) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,145,0,0.1) 0%, transparent 50%)` }} />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 h-full flex items-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <span className="inline-block rounded px-2 py-0.5 text-[9px] font-bold tracking-[0.2em] uppercase sm:text-[10px]" style={{ backgroundColor: "rgba(255,145,0,0.2)", color: "#FF9100" }}>Semana de ofertas</span>
+          <h1 className="font-display text-3xl font-black leading-[0.9] tracking-[-0.02em] text-white mt-3 sm:text-5xl sm:mt-4">
+            Preço que é<br />
+            <span style={{ color: "#FF9100" }}>KERO PROMO</span>
+          </h1>
+          <p className="mt-3 text-sm text-white/60 sm:text-base">O atacado mais perto de você. Qualidade e economia todo dia.</p>
+          <a href="https://wa.me/5547XXXXXXXX" className="mt-5 inline-flex items-center rounded-md px-6 py-2.5 text-[10px] font-bold tracking-[0.12em] uppercase transition-all sm:text-[11px]" style={{ backgroundColor: "#FF9100", color: "#0d0e0d" }}>
+            VER OFERTAS
+          </a>
+        </motion.div>
       </div>
     </section>
   )

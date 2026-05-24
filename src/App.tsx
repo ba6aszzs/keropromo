@@ -1,21 +1,25 @@
 import Navbar from "@/components/Navbar"
+import TopBar from "@/components/TopBar"
+import CategoryStrip from "@/components/CategoryStrip"
 import Hero from "@/components/Hero"
 import Stats from "@/components/Stats"
-import WhatsApp from "@/components/WhatsApp"
-import Footer from "@/components/Footer"
+import CategoryGrid from "@/sections/CategoryGrid"
 import Products from "@/sections/Products"
-import Categories from "@/sections/Categories"
-import About from "@/sections/About"
+import Newsletter from "@/sections/Newsletter"
+import Footer from "@/components/Footer"
+import WhatsApp from "@/components/WhatsApp"
 
 export default function App() {
   return (
     <div>
-      <Navbar c2={"#FFD700"} display="KEROPROMO" />
-      <Hero c1={"#00A859"} c2={"#FFD700"} display="KEROPROMO" segment="Mercado & Varejo" motto="Oferta que vende" />
-      <Stats c2={"#FFD700"} />
-      <Products c2={"#FFD700"} />
-      <Categories c2={"#FFD700"} />
-      <About c2={"#FFD700"} display="KEROPROMO" />
+      <TopBar />
+      <Navbar />
+      <CategoryStrip />
+      <Hero />
+      <Stats />
+      <CategoryGrid />
+      <Products />
+      <Newsletter />
       <Footer />
       <WhatsApp />
     </div>
